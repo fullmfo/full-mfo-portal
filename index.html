@@ -286,7 +286,7 @@
     // procura em qual família este usuário tem acesso
     // (busca por collectionGroup nas subcoleções "acessos")
     const acessosSnap = await db.collectionGroup('acessos')
-      .where(firebase.firestore.FieldPath.documentId(), '==', usuarioAtual.uid)
+      .where('email', '==', usuarioAtual.email)
       .get()
       .catch(() => null);
 
